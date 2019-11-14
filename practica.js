@@ -75,8 +75,8 @@ function parserData(data) {
 
 function drawMap(parser){
   const width = 800;
-  const height = 1050;
-  const zoom =110000
+  const height = 850;
+  const zoom =100000
   const titulo = d3.select('#mapa')
         .append('p')
         .text("MAPA BARRIOS DE MADIRD")
@@ -130,8 +130,8 @@ function drawMap(parser){
 }
 
 function drawChart(parser,barrio) {
-    const height_svg = 480;
-    const width_svg = 1000;
+    const height_svg = 380;
+    const width_svg = 700;
     // Para evitar problemas con los margenes y que las graficas se puedan salir del SVG
     // Dejaremos el tamaño mayor para el svg pero realmente pintaremos en una rectangulo menor
     // que vendra dado por una reduccion del % definido en la variable reduction.
@@ -195,8 +195,8 @@ function drawChart(parser,barrio) {
 function drawRegresion(parser) {
 
   // Hacemos lo mismo que para la grafica
-  const height_svg = 500;
-  const width_svg = 1000;
+  const height_svg = 390;
+  const width_svg = 800;
   const reduction = 10
   const height = height_svg *(1-reduction/100);
   const width = width_svg *(1-reduction/100);;
