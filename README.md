@@ -1,45 +1,34 @@
-# Test-MD
-Este repositorio solo contendra un README.md muy chulo (Basado en el del gran Fran Asensi -> Dynam1co)
+# Practica D3 BootCamp Big Data & Machine Learning KeepCoding
+Este repositorio contiene la practica del modulo Visualizacion D3 de Daniel Alvaro 
 
 
 ## Contexto 🌐
 
-Para la realizacion de la practica se ha usado un dataset de Airbnb filtrado para las propiedades en Madrid (14,780 records).
-[Dataset Airbnb](https://public.opendatasoft.com/explore/dataset/airbnb-listings)
+Para la realizacion de la practica se ha usado un json a medida (maquetado por el profesor del modulo) basado en los datos de pisos de Airbnb en Madrid
+[JSON](https://gist.githubusercontent.com/miguepiscy/2d431ec3bc101ef62ff8ddd0e476177f/raw/d9f3a11cfa08154c36623c1bf01537bb7b022491/practica.json)
 
 ## Objetivo de nuestra practica 🎯
-La plataforma Airbnb distingue entre Anfitriones que son particulares y aquello que son una empresa y se deben dar de alta de manera distinta.
+Los objetivos de la practica vienen recogidos en el pdf entregado por el profesor:
 
-Al ser las condiciones de los particulares mas beneficiosas, se ha detectado un creciente fraude en empresas que se dan de alta como particulares para aprovecharse de ello.
+1. Crear un mapa con los barrios de la ciudad de Madrid y pintarlos por colores según el precio medio del alquiler en el barrio.
+2. Crear una gráfica que en el eje Y tenga el número de propiedades y en el eje X el número de habitaciones de un barrio.
+3. Crear una gráfica que dibuje una regresión lineal de alguna de las características con respecto al precio en un barrio.
+4. Hacer que el valor de las gráficas cambien con los datos del barrio al que hago click en el mapa.
 
-Uno de los objetivos de nuestro analisis sera intentar identificar en que barrrios o zonas de Madrid hay anfitriones con un numero especialmente alto de propiedades en la plataforma que puedan hacernos sospechar que ese Anfitrion se corresponde realmente con una empresa (o con un multimillonario :stuck_out_tongue_winking_eye:)
-
-Nuestro Dashboard mostrara el numero de propiedades por Anfitrion en cada zona, asi como el promedio dentro de cada barrio para poder identificar por donde empezar nuestra busqueda de posibles fraudes.
-
-### Proceso ETL 💾
-Para realizar un proceso basico de limpieza y eliminacion de ruido del dataset de Airbnb se llevan a cabo los siguientes filtros desde la Fuente de Datos de Tableau: 
-- **City:** Nos quedamos con los que contengan la palabra Madrid
-- **Country:** Nos quedamos con los que contengan Spain
-- **Country Code:** Nos quedamos con los que contengan ES
-- **State:** Nos quedamos con los que contengan Spain, Madrid o España
-- **Neighbourhood:** Eliminamos los campos nulos, para evitar ruido cuando tratemos con ellos, ya que este campo sera clave en las hojas y el Dashboard que generaremos.
-
-Una vez llevado a cabo este proceso de limpieza el numero de resgistros con los que vamos a trabaar son: **8.743**
-
-### Jerarquias 🔢
-
-La jerarquias generadas son las siguientes:
-
-- **Jerarquia Geografica:** Country-City-ZipCode
-- **Jerarquia Propiedad:** Property Type-Room Type- Bed Type
-
-### Grupos ⛲️
-Para poder trabajar mas comodamente con los datos y dar mayor claridad a las graficas se ha decido agrupar los Barrios(Neghbourhood) por Zonas: Centro, Norte, Sur, Este y Oeste 
+Respecto al punto 3 de la regresion lineal, para que esta tenga sentido, se han relacionado el numero de propiedades de cada barrio con sus respectivos precios medios.
+Esto lleva a que en el punto 4 la grafica de la regresion lineal sea unica (se construye con medidas de todos los barrios), por lo que solo la grafica del punto 2 variará al hacer click sobre los barrios del mapa.
 
 
 ## Otros datos de Interes 📑
-Para obtener el numero de pisos hemos utilizado un campo calculado con la siguiente formula:
+La interactividad de nuestra practica se consigue de dos maneras:
+- Al pasar el raton sobre el mapa aparece el texto del barrio al que pertenece
+- Al clickar sobre un barrio en el mapa, la gráfica del punto 2 cambia automaticamente. Esta grafica a veces se queda en blanco ya que hay barrios en el json que venian sin la informacion pertinente.
 
-{ FIXED ([Host ID]):COUNT([Host ID])}
+El proyecto consta de tres ficheros:
+- main.css
+- index.html
+- practica.js
 
-Se ha incluido un filtro por zonas que permite concretar el analisis.
+El codigo de practica.js esta profusamente comentado para poder hacer un seguimiento del mismo.
+
+Para poder llevar a cabo la regresion lineal se ha hecho uso de la libreria de JavaScript: "Simple Statistics"
