@@ -16,7 +16,7 @@ Los objetivos de la practica vienen recogidos en el pdf entregado por el profeso
 4. Hacer que el valor de las gráficas cambien con los datos del barrio al que hago click en el mapa.
 
 Respecto al punto 3 de la regresion lineal, para que esta tenga sentido, se han relacionado el numero de propiedades de cada barrio con sus respectivos precios medios.
-Esto lleva a que en el punto 4 la grafica de la regresion lineal sea unica (se construye con medidas de todos los barrios), por lo que solo la grafica del punto 2 variará al hacer click sobre los barrios del mapa.
+Esto lleva a que en el punto 4 la grafica de la regresion lineal sea unica (se construye con medidas de todos los barrios), por lo que **solo la grafica del punto 2** variará al hacer click sobre los barrios del mapa.
 
 
 ## Otros datos de Interes 📑
@@ -25,10 +25,10 @@ La interactividad de nuestra practica se consigue de dos maneras:
 - Al clickar sobre un barrio en el mapa, la gráfica del punto 2 cambia automaticamente. Esta grafica a veces se queda en blanco ya que hay barrios en el json que venian sin la informacion pertinente.
 
 El proyecto consta de tres ficheros:
-- main.css
-- index.html
-- practica.js
+- **main.css**
+- **index.html**
+- **practica.js**
 
 El codigo de practica.js esta profusamente comentado para poder hacer un seguimiento del mismo.
 
-Para poder llevar a cabo la regresion lineal se ha hecho uso de la libreria de JavaScript: "Simple Statistics"
+Para poder llevar a cabo la regresion lineal se ha hecho uso de la libreria de JavaScript: "**Simple Statistics**"
