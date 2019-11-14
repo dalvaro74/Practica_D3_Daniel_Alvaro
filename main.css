@@ -1,0 +1,63 @@
+.container {
+    width:100%;
+    /* text-align:center; */
+}
+
+.left {
+    float:left;
+    margin-right: 30;
+    /* width:100px; */
+}
+
+.center {
+    display: inline-block;
+    margin:0 auto;
+    /* width:100px; */
+}
+
+.right {
+    display: inline-block;
+    /* float:right; */
+    /* width:100px; */
+}
+
+.rectwarning{
+    fill: red
+}
+.titulo-grafica{
+    margin: 0px 0px 20px 30px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.titulo-regresion{
+    margin: 0px 0px 20px 30px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.titulo-mapa{
+    margin: 20px 0px 0px 30px;
+    text-align:center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#text-barrio{
+    font-weight: bold; 
+}
+
+#mapa{
+    border-style: double ;
+    background-color: rgb(91, 114, 155);
+}
+
+#grafica{
+    border-style: inset ;
+    background-color: aliceblue;
+    margin-bottom: 20px;
+}
+#regresion{
+    border-style: inset;
+    background-color: aliceblue;
+}
